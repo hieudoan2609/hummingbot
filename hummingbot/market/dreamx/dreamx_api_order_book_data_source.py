@@ -43,9 +43,8 @@ class DREAMXAPIOrderBookDataSource(OrderBookTrackerDataSource):
             cls._iaobds_logger = logging.getLogger(__name__)
         return cls._iaobds_logger
 
-    def __init__(self, dreamx_api_key: str, trading_pairs: Optional[List[str]] = None):
+    def __init__(self, trading_pairs: Optional[List[str]] = None):
         super().__init__()
-        self._dreamx_api_key = dreamx_api_key
         self._trading_pairs: Optional[List[str]] = trading_pairs
         self._get_tracking_pair_done_event: asyncio.Event = asyncio.Event()
 
